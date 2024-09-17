@@ -1,0 +1,11 @@
+- name: printing
+  hosts: web
+  tasks: 
+  - name: printing
+    ansible.builtin.command: id expense
+    register: user
+
+  - name: printing
+    ansible.builtin.debug:
+      msg: "{{user}}"
+
