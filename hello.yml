@@ -1,5 +1,6 @@
 - name: printing
   hosts: web
+  become: yes
   tasks: 
   - name: printing
     ansible.builtin.command: id expense
@@ -9,4 +10,11 @@
   - name: printing
     ansible.builtin.debug:
       msg: "{{user}}"
+  
+  - name: printing
+    ansible.builtin.command: useradd expense
+
+    when: user.rc!=0
+    
+    
 
