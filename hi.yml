@@ -1,0 +1,6 @@
+- name: printing
+  hosts: web
+  tasks: 
+  - name: printing
+    ansible.builtin.debug:
+      msg: "hi"
